@@ -35,7 +35,7 @@ Simply download the `iskender.css` file and link it in your HTML project.
 Or clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/iskender-design-system.git
+git clone https://github.com/ocaloguzkaan/iskender.git
 ```
 
 ## 🚀 Usage
