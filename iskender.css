@@ -1,6 +1,6 @@
 /* 
    ISKENDER DESIGN SYSTEM 
-   v2.0.0 (The "Kebab" Edition)
+   v1.0.0 (The "Kebab" Edition)
    Inspired by the richness of the famous dish: Sauce, Butter, Yogurt, Meat.
    Global, English-only, Minimalist-Maximalist.
 */
@@ -324,4 +324,588 @@ body.inverted h2,
 body.inverted .isk-brand {
     color: #FF6B6B;
     /* Brighter tomato for dark mode */
+}
+
+/* Accordion "The Layered Pastry" */
+.isk-accordion {
+    border: var(--isk-border-width) solid var(--isk-color-border);
+    border-radius: var(--isk-border-radius);
+    background: var(--isk-color-surface);
+    overflow: hidden;
+}
+
+.isk-accordion details {
+    border-bottom: 2px solid rgba(60, 42, 32, 0.1);
+}
+
+.isk-accordion details:last-child {
+    border-bottom: none;
+}
+
+.isk-accordion summary {
+    padding: var(--isk-spacing-md);
+    cursor: pointer;
+    font-weight: 700;
+    list-style: none;
+    /* Hide default arrow */
+    position: relative;
+    padding-right: 3rem;
+    transition: background-color 0.2s;
+}
+
+.isk-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+.isk-accordion summary::after {
+    content: '+';
+    position: absolute;
+    right: var(--isk-spacing-md);
+    font-size: 1.5rem;
+    color: var(--isk-color-primary);
+    transition: transform 0.3s;
+}
+
+.isk-accordion details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.isk-accordion details[open] summary {
+    background-color: rgba(251, 188, 5, 0.1);
+    /* Butter tint */
+}
+
+.isk-accordion-content {
+    padding: var(--isk-spacing-md);
+    border-top: 1px solid rgba(60, 42, 32, 0.05);
+}
+
+/* Alert "The Spice Warning" */
+.isk-alert {
+    padding: var(--isk-spacing-md);
+    border: var(--isk-border-width) solid currentColor;
+    border-radius: var(--isk-border-radius);
+    margin-bottom: var(--isk-spacing-md);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: var(--isk-spacing-sm);
+}
+
+.isk-alert-info {
+    color: var(--isk-char-brown);
+    background-color: var(--isk-pita-beige);
+}
+
+.isk-alert-success {
+    color: var(--isk-pepper-green);
+    background-color: #e6f4ea;
+}
+
+.isk-alert-warning {
+    color: var(--isk-butter-gold);
+    background-color: #fef7e0;
+    border-color: var(--isk-butter-gold);
+    color: #B38600;
+}
+
+.isk-alert-error {
+    color: var(--isk-sauce-red);
+    background-color: #fce8e6;
+}
+
+/* Badge "The Olive" */
+.isk-badge {
+    display: inline-block;
+    padding: 0.25em 0.75em;
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 50px;
+    background-color: var(--isk-color-primary);
+    color: white;
+    vertical-align: middle;
+}
+
+.isk-badge-gold {
+    background-color: var(--isk-butter-gold);
+    color: var(--isk-char-brown);
+}
+
+.isk-badge-outline {
+    background: transparent;
+    border: 2px solid currentColor;
+    color: var(--isk-color-text);
+}
+
+/* Form Elements: Checkbox & Radio "The Selection" */
+.isk-check-group,
+.isk-radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.isk-check-label,
+.isk-radio-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.isk-check-input,
+.isk-radio-input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.25rem;
+    height: 1.25rem;
+    border: 3px solid var(--isk-color-border);
+    background: var(--isk-color-surface);
+    cursor: pointer;
+    transition: var(--isk-transition);
+    position: relative;
+}
+
+.isk-check-input {
+    border-radius: 4px;
+}
+
+.isk-radio-input {
+    border-radius: 50%;
+}
+
+.isk-check-input:checked,
+.isk-radio-input:checked {
+    background-color: var(--isk-color-primary);
+    border-color: var(--isk-color-primary);
+}
+
+.isk-check-input:checked::after {
+    content: '✓';
+    position: absolute;
+    color: white;
+    font-size: 0.9rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+}
+
+.isk-radio-input:checked::after {
+    content: '';
+    position: absolute;
+    width: 0.5rem;
+    height: 0.5rem;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Switch "The Toggle" */
+.isk-switch {
+    display: inline-block;
+    width: 3.5rem;
+    height: 2rem;
+    position: relative;
+}
+
+.isk-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.isk-switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border: 3px solid var(--isk-color-border);
+    border-radius: 34px;
+    transition: .4s;
+}
+
+.isk-switch-slider::before {
+    position: absolute;
+    content: "";
+    height: 1.2rem;
+    width: 1.2rem;
+    left: 0.2rem;
+    bottom: 0.2rem;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    border: 2px solid var(--isk-color-border);
+}
+
+.isk-switch input:checked+.isk-switch-slider {
+    background-color: var(--isk-color-primary);
+}
+
+.isk-switch input:checked+.isk-switch-slider::before {
+    transform: translateX(1.4rem);
+}
+
+/* Select & Textarea */
+.isk-select,
+.isk-textarea {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 3px solid #ddd;
+    border-radius: var(--isk-border-radius);
+    background: var(--isk-color-surface);
+    font-family: var(--isk-font-body);
+    font-size: 1rem;
+    color: var(--isk-color-text);
+    transition: var(--isk-transition);
+}
+
+.isk-select {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%233C2A20%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem top 50%;
+    background-size: 0.65rem auto;
+}
+
+.isk-textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.isk-select:focus,
+.isk-textarea:focus {
+    outline: none;
+    border-color: var(--isk-color-primary);
+    box-shadow: 0 0 0 4px rgba(217, 48, 37, 0.1);
+}
+
+/* Dialog/Modal "The Secret Recipe" */
+.isk-dialog {
+    padding: var(--isk-spacing-lg);
+    border: var(--isk-border-width) solid var(--isk-color-border);
+    border-radius: var(--isk-border-radius);
+    background: var(--isk-color-surface);
+    box-shadow: var(--isk-shadow-hover);
+    max-width: 500px;
+    width: 90%;
+}
+
+.isk-dialog::backdrop {
+    background: rgba(60, 42, 32, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+/* Drawer "The Side Dish" */
+.isk-drawer {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: var(--isk-color-surface);
+    border-right: var(--isk-border-width) solid var(--isk-color-border);
+    transition: transform 0.3s ease-in-out;
+    z-index: 2000;
+    padding: var(--isk-spacing-lg);
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.isk-drawer.open {
+    transform: translateX(300px);
+}
+
+/* Dropdown */
+.isk-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.isk-dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    background-color: var(--isk-color-surface);
+    border: var(--isk-border-width) solid var(--isk-color-border);
+    border-radius: var(--isk-border-radius);
+    box-shadow: var(--isk-shadow-base);
+    z-index: 10;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+}
+
+.isk-dropdown-content a {
+    color: var(--isk-color-text);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: var(--isk-font-body);
+}
+
+.isk-dropdown-content a:hover {
+    background-color: var(--isk-pita-beige);
+}
+
+.isk-dropdown:hover .isk-dropdown-content {
+    display: block;
+}
+
+/* Calendar/Datepicker Grid */
+.isk-calendar {
+    border: var(--isk-border-width) solid var(--isk-color-border);
+    border-radius: var(--isk-border-radius);
+    background: var(--isk-color-surface);
+    padding: var(--isk-spacing-md);
+    width: fit-content;
+}
+
+.isk-calendar-header {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: var(--isk-spacing-sm);
+}
+
+.isk-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    text-align: center;
+}
+
+.isk-calendar-day {
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.isk-calendar-day:hover {
+    background-color: var(--isk-butter-gold);
+    cursor: pointer;
+}
+
+.isk-calendar-day.selected {
+    background-color: var(--isk-color-primary);
+    color: white;
+}
+
+/* Table "The Menu" */
+.isk-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--isk-font-body);
+    margin-bottom: var(--isk-spacing-md);
+}
+
+.isk-table th,
+.isk-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 2px solid #EEE;
+}
+
+.isk-table th {
+    font-family: var(--isk-font-heading);
+    color: var(--isk-color-primary);
+    font-size: 1.2rem;
+    border-bottom: 2px solid var(--isk-color-primary);
+}
+
+.isk-table tr:hover {
+    background-color: var(--isk-pita-beige);
+}
+
+/* Tabs */
+.isk-tab-group {
+    border-bottom: 2px solid var(--isk-color-border);
+    margin-bottom: var(--isk-spacing-md);
+}
+
+.isk-tab {
+    background: none;
+    border: none;
+    padding: 1rem 2rem;
+    font-family: var(--isk-font-body);
+    font-weight: 700;
+    cursor: pointer;
+    border-bottom: 4px solid transparent;
+    transition: 0.3s;
+    color: var(--isk-color-text);
+}
+
+.isk-tab:hover {
+    color: var(--isk-color-primary);
+}
+
+.isk-tab.active {
+    border-bottom-color: var(--isk-color-primary);
+}
+
+/* Tag "The Side" */
+.isk-tag {
+    display: inline-flex;
+    align-items: center;
+    background: var(--isk-pita-beige);
+    border: 1px solid var(--isk-color-border);
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.85rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Tooltip */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--isk-char-brown);
+    color: var(--isk-pita-beige);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    z-index: 100;
+    box-shadow: var(--isk-shadow-base);
+}
+
+/* Progress */
+.isk-progress {
+    width: 100%;
+    background-color: #eee;
+    height: 1rem;
+    border-radius: 50px;
+    overflow: hidden;
+    border: 2px solid var(--isk-color-border);
+}
+
+.isk-progress-bar {
+    height: 100%;
+    background-color: var(--isk-color-primary);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+/* Spinner */
+.isk-spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid rgba(217, 48, 37, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--isk-color-primary);
+    animation: isk-spin 1s ease-in-out infinite;
+}
+
+@keyframes isk-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Split Button */
+.isk-split-btn {
+    display: inline-flex;
+}
+
+.isk-split-btn .isk-btn {
+    margin-right: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+}
+
+.isk-split-btn-toggle {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 0 1rem;
+}
+
+/* Pagination */
+.isk-pagination {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+}
+
+.isk-page-item {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--isk-color-border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+.isk-page-item:hover,
+.isk-page-item.active {
+    background-color: var(--isk-color-primary);
+    color: white;
+    border-color: var(--isk-color-primary);
+}
+
+/* Breadcrumbs (implied path helper) */
+.isk-breadcrumbs {
+    display: flex;
+    gap: 0.5rem;
+    color: var(--isk-color-text);
+    font-size: 0.9rem;
+}
+
+.isk-breadcrumbs span::after {
+    content: '/';
+    margin-left: 0.5rem;
+    color: #999;
+}
+
+.isk-breadcrumbs span:last-child::after {
+    content: '';
+}
+
+/* Popover */
+.isk-popover {
+    position: absolute;
+    background: var(--isk-color-surface);
+    border: var(--isk-border-width) solid var(--isk-color-border);
+    border-radius: var(--isk-border-radius);
+    padding: var(--isk-spacing-md);
+    box-shadow: var(--isk-shadow-hover);
+    z-index: 100;
+    max-width: 300px;
+}
+
+.isk-popover::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    border-width: 10px 10px 0;
+    border-style: solid;
+    border-color: var(--isk-color-border) transparent transparent transparent;
+}
+
+.isk-popover::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 23px;
+    border-width: 7px 7px 0;
+    border-style: solid;
+    border-color: var(--isk-color-surface) transparent transparent transparent;
 }
