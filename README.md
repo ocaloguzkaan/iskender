@@ -3,6 +3,7 @@
 **A flavorsome, minimalist-maximalist CSS framework built for impact.**
 
 
+
 ## 🥙 The Philosophy
 
 **Iskender** is not just a framework; it's a design ethos inspired by the legendary dish. It rejects the cold, sterile aesthetics of modern web design in favor of warmth, richness, and bold structural elements. 
@@ -73,6 +74,65 @@ Toggle the class `.inverted` on the `<body>` tag to switch to the dark, "charred
 ```javascript
 document.body.classList.toggle('inverted');
 ```
+
+#### Accordion
+```html
+<div class="isk-accordion">
+    <details>
+        <summary>Section 1</summary>
+        <div class="isk-accordion-content">Content here...</div>
+    </details>
+</div>
+```
+
+#### Alerts
+```html
+<div class="isk-alert isk-alert-warning">⚠️ Watch out for the spice!</div>
+```
+
+#### Badges & Tags
+```html
+<span class="isk-badge">New</span>
+<span class="isk-tag">Vegan</span>
+```
+
+#### Form Elements
+```html
+<!-- Switch -->
+<label class="isk-switch">
+  <input type="checkbox">
+  <span class="isk-switch-slider"></span>
+</label>
+
+<!-- Checkbox -->
+<label class="isk-check-label">
+  <input type="checkbox" class="isk-check-input">
+  I agree to the terms
+</label>
+
+<!-- Input/Select -->
+<select class="isk-select"><option>Option 1</option></select>
+```
+
+#### Table
+```html
+<table class="isk-table">
+  <thead><tr><th>Dish</th><th>Price</th></tr></thead>
+  <tbody><tr><td>Kebab</td><td>$15</td></tr></tbody>
+</table>
+```
+
+#### Spinner
+```html
+<div class="isk-spinner"></div>
+```
+
+#### Progress
+```html
+<div class="isk-progress"><div class="isk-progress-bar" style="width: 50%"></div></div>
+```
+
+
 
 ---
 
