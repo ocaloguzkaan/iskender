@@ -2,7 +2,7 @@
 
 **A flavorsome, minimalist-maximalist CSS framework built for impact.**
 
-![License](https://img.shields.io/badge/License-CC_BY_4.0-lightgrey.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Version](https://img.shields.io/badge/version-2.0.0-red)
 
 ## 🥙 The Philosophy
@@ -78,8 +78,7 @@ document.body.classList.toggle('inverted');
 
 ## 📄 License
 
-This project is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** license.  
-You are free to share and adapt the material, provided you give appropriate credit.
+This project is licensed under the [MIT License](LICENSE).
 
 ---
 
