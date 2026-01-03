@@ -93,6 +93,158 @@
                         <button class="isk-btn isk-btn-gold">Side Dish</button>
                     </div>
                 </div>
+                <!-- Form Selections -->
+                <div class="isk-card">
+                    <h4>Selections</h4>
+                    <p>Switches, checks, and radios.</p>
+                    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <label class="isk-switch">
+                            <input type="checkbox" checked>
+                            <span class="isk-switch-slider"></span>
+                        </label>
+                        <div class="isk-check-group">
+                            <label class="isk-check-label"><input type="checkbox" class="isk-check-input" checked>
+                                Confirmed</label>
+                            <label class="isk-check-label"><input type="checkbox" class="isk-check-input">
+                                Pending</label>
+                        </div>
+                        <div class="isk-radio-group">
+                            <label class="isk-radio-label"><input type="radio" name="r1" class="isk-radio-input"
+                                    checked> Option A</label>
+                            <label class="isk-radio-label"><input type="radio" name="r1" class="isk-radio-input"> Option
+                                B</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Extended Forms -->
+                <div class="isk-card">
+                    <h4>More Inputs</h4>
+                    <p>Selects and text areas.</p>
+                    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <select class="isk-select">
+                            <option>Choose a Spice Level</option>
+                            <option>Mild</option>
+                            <option>Hot</option>
+                            <option>Iskender Style</option>
+                        </select>
+                        <textarea class="isk-textarea" placeholder="Special requests..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="isk-card">
+                    <h4>Navigation</h4>
+                    <p>Tabs and Breadcrumbs.</p>
+                    <div style="margin-top: 1.5rem;">
+                        <div class="isk-tab-group">
+                            <button class="isk-tab active">Meze</button>
+                            <button class="isk-tab">Main</button>
+                            <button class="isk-tab">Dessert</button>
+                        </div>
+                        <nav class="isk-breadcrumbs" style="margin-top: 1rem;">
+                            <span>Home</span>
+                            <span>Menu</span>
+                            <span>Specials</span>
+                        </nav>
+                        <ul class="isk-pagination" style="margin-top: 1.5rem;">
+                            <li class="isk-page-item active">1</li>
+                            <li class="isk-page-item">2</li>
+                            <li class="isk-page-item">3</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Accordion -->
+                <div class="isk-card">
+                    <h4>Accordion</h4>
+                    <p>Expandable details.</p>
+                    <div class="isk-accordion" style="margin-top: 1.5rem;">
+                        <details open>
+                            <summary>What is Iskender?</summary>
+                            <div class="isk-accordion-content">A delicious masterpiece of döner kebab, tomato sauce, and
+                                butter.</div>
+                        </details>
+                        <details>
+                            <summary>Is it spicy?</summary>
+                            <div class="isk-accordion-content">It can be! Add peppers to taste.</div>
+                        </details>
+                    </div>
+                </div>
+
+                <!-- Status & Feedback -->
+                <div class="isk-card" style="grid-column: span 2;">
+                    <h4>Status & Feedback</h4>
+                    <p>Alerts, Badges, and Progress.</p>
+                    <div style="margin-top: 1.5rem; display: grid; gap: 1rem;">
+                        <div class="isk-alert isk-alert-warning">⚠️ The butter is sizzling hot!</div>
+                        <div class="isk-alert isk-alert-success">✅ Order received.</div>
+                        <div style="display: flex; gap: 0.5rem; align-items: center;">
+                            <span class="isk-badge">New</span>
+                            <span class="isk-badge isk-badge-gold">Hot</span>
+                            <span class="isk-tag">Gluten Free</span>
+                            <span class="isk-tag">Halal</span>
+                            <div class="isk-spinner" style="width: 20px; height: 20px; margin-left: auto;"></div>
+                        </div>
+                        <div class="isk-progress">
+                            <div class="isk-progress-bar" style="width: 75%"></div>
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            <button class="isk-btn" data-tooltip="This is a tooltip!">Hover Me (Tooltip)</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Display -->
+                <div class="isk-card" style="grid-column: span 2;">
+                    <h4>The Menu (Table)</h4>
+                    <table class="isk-table">
+                        <thead>
+                            <tr>
+                                <th>Dish</th>
+                                <th>Price</th>
+                                <th>Calories</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Iskender Kebab</td>
+                                <td>$18.50</td>
+                                <td>Too many</td>
+                            </tr>
+                            <tr>
+                                <td>Ezogelin Soup</td>
+                                <td>$6.00</td>
+                                <td>300</td>
+                            </tr>
+                            <tr>
+                                <td>Kunefe</td>
+                                <td>$8.00</td>
+                                <td>Worth it</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Interactive Overlays -->
+                <div class="isk-card">
+                    <h4>Overlays</h4>
+                    <p>Dialogs and Drawers.</p>
+                    <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <button class="isk-btn isk-btn-gold"
+                            onclick="document.getElementById('demo-dialog').showModal()">Open Modal</button>
+                        <button class="isk-btn"
+                            onclick="document.getElementById('demo-drawer').classList.add('open')">Open Drawer</button>
+                        <div class="isk-dropdown">
+                            <button class="isk-btn">Dropdown Menu</button>
+                            <div class="isk-dropdown-content">
+                                <a href="#">Profile</a>
+                                <a href="#">Settings</a>
+                                <a href="#">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Typography Scale -->
@@ -122,6 +274,28 @@
         <h2 style="font-size: 2rem;">ISKENDER.</h2>
         <p>&copy; 2026. Made with hunger.</p>
     </footer>
+
+    <!-- Hidden Interactive Elements -->
+    <dialog id="demo-dialog" class="isk-dialog">
+        <h3>The Secret Recipe</h3>
+        <p>1. Quality Meat<br>2. Fresh Pide<br>3. Tomato Sauce<br>4. Sizzling Butter<br>5. Yogurt</p>
+        <div style="text-align: right; margin-top: 2rem;">
+            <button class="isk-btn" onclick="document.getElementById('demo-dialog').close()">Close</button>
+        </div>
+    </dialog>
+
+    <div id="demo-drawer" class="isk-drawer">
+        <button class="isk-btn" onclick="this.parentElement.classList.remove('open')"
+            style="margin-bottom: 2rem;">&times; Close</button>
+        <h3>Side Pipeline</h3>
+        <p>This is a drawer content area.</p>
+        <a href="#"
+            style="display: block; padding: 1rem 0; color: var(--isk-color-text); text-decoration: none; border-bottom: 1px solid #eee;">Menu
+            Item 1</a>
+        <a href="#"
+            style="display: block; padding: 1rem 0; color: var(--isk-color-text); text-decoration: none; border-bottom: 1px solid #eee;">Menu
+            Item 2</a>
+    </div>
 
     <script src="script.js"></script>
 </body>
