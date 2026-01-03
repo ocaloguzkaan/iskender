@@ -74,10 +74,6 @@ Toggle the class `.inverted` on the `<body>` tag to switch to the dark, "charred
 document.body.classList.toggle('inverted');
 ```
 
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ---
 
 *Made with hunger.*
