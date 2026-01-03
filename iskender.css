@@ -1,0 +1,327 @@
+/* 
+   ISKENDER DESIGN SYSTEM 
+   v2.0.0 (The "Kebab" Edition)
+   Inspired by the richness of the famous dish: Sauce, Butter, Yogurt, Meat.
+   Global, English-only, Minimalist-Maximalist.
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lexend:wght@300;500;700&display=swap');
+
+:root {
+    /* THE PALETTE (Gastronomy Inspired) */
+    --isk-sauce-red: #D93025;
+    /* Rich Tomato Sauce - The Primary */
+    --isk-butter-gold: #FBBC05;
+    /* Sizzling Butter - The Accent */
+    --isk-yogurt-white: #F8F9FA;
+    /* Fresh Yogurt - The Light Surface */
+    --isk-pita-beige: #FDFBF7;
+    /* Warm Bread - The Background */
+    --isk-char-brown: #3C2A20;
+    /* Grilled Meat - The Text/Dark */
+    --isk-pepper-green: #1E8E3E;
+    /* Roasted Pepper - Success/Highlight */
+
+    /* Semantic Mapping */
+    --isk-color-primary: var(--isk-sauce-red);
+    --isk-color-secondary: var(--isk-butter-gold);
+    --isk-color-bg: var(--isk-pita-beige);
+    --isk-color-surface: #FFFFFF;
+    --isk-color-text: var(--isk-char-brown);
+    --isk-color-border: var(--isk-char-brown);
+
+    /* Spacing & Layout - "Generous Portions" */
+    --isk-spacing-sm: 0.75rem;
+    --isk-spacing-md: 1.5rem;
+    --isk-spacing-lg: 3rem;
+    --isk-spacing-xl: 6rem;
+
+    /* Typography */
+    --isk-font-heading: 'DM Serif Display', serif;
+    /* Elegant, classic, rich */
+    --isk-font-body: 'Lexend', sans-serif;
+    /* Clean, modern, accessible */
+
+    /* The "Sizzle" Effects */
+    --isk-border-width: 4px;
+    --isk-border-radius: 8px;
+    /* Slightly toasted edges, not too sharp */
+    --isk-shadow-base: 8px 8px 0px rgba(60, 42, 32, 0.15);
+    --isk-shadow-hover: 12px 12px 0px var(--isk-butter-gold);
+    --isk-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--isk-color-bg);
+    color: var(--isk-color-text);
+    font-family: var(--isk-font-body);
+    font-size: 19px;
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--isk-font-heading);
+    color: var(--isk-color-primary);
+    line-height: 1.05;
+    margin-bottom: var(--isk-spacing-md);
+}
+
+h1 {
+    font-size: 5.5rem;
+    text-shadow: 4px 4px 0px var(--isk-butter-gold);
+}
+
+h2 {
+    font-size: 3.5rem;
+}
+
+h3 {
+    font-size: 2.2rem;
+    color: var(--isk-color-text);
+}
+
+p {
+    margin-bottom: var(--isk-spacing-md);
+    max-width: 65ch;
+    opacity: 0.9;
+}
+
+.text-highlight {
+    background: linear-gradient(120deg, var(--isk-butter-gold) 0%, var(--isk-butter-gold) 100%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.3em;
+    background-position: 0 88%;
+    transition: background-size 0.25s ease-in;
+}
+
+.text-highlight:hover {
+    background-size: 100% 88%;
+}
+
+/* Layout Components */
+.isk-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--isk-spacing-md);
+}
+
+.isk-section {
+    padding: var(--isk-spacing-xl) 0;
+}
+
+.isk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--isk-spacing-lg);
+}
+
+/* Layered Card - "The Portion" */
+.isk-card {
+    background: var(--isk-color-surface);
+    border: var(--isk-border-width) solid var(--isk-color-border);
+    border-radius: var(--isk-border-radius);
+    padding: var(--isk-spacing-lg);
+    box-shadow: var(--isk-shadow-base);
+    transition: var(--isk-transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.isk-card::before {
+    /* The "Sauce" drip effect on top */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: var(--isk-color-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.isk-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--isk-shadow-hover);
+    border-color: var(--isk-color-primary);
+}
+
+.isk-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Buttons - "The Garnish" */
+.isk-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    font-family: var(--isk-font-body);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--isk-color-text);
+    background: var(--isk-color-surface);
+    border: var(--isk-border-width) solid var(--isk-color-primary);
+    border-radius: 50px;
+    /* Rounded like a dollop */
+    text-decoration: none;
+    cursor: pointer;
+    transition: var(--isk-transition);
+    box-shadow: 0 6px 0 var(--isk-color-primary);
+    margin-right: var(--isk-spacing-sm);
+    position: relative;
+    top: 0;
+}
+
+.isk-btn:hover {
+    background-color: var(--isk-color-primary);
+    color: white;
+    box-shadow: 0 10px 0 #A93226;
+    /* Darker red shadow */
+    transform: translateY(-4px);
+}
+
+.isk-btn:active {
+    top: 6px;
+    box-shadow: 0 0 0 #A93226;
+    transform: translateY(0);
+}
+
+.isk-btn-gold {
+    border-color: var(--isk-color-border);
+    box-shadow: 0 6px 0 var(--isk-color-border);
+}
+
+.isk-btn-gold:hover {
+    background-color: var(--isk-butter-gold);
+    color: var(--isk-color-text);
+    border-color: var(--isk-color-text);
+    box-shadow: 0 10px 0 var(--isk-color-text);
+}
+
+/* Navigation - "The Plate" */
+.isk-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--isk-spacing-md) var(--isk-spacing-lg);
+    background: rgba(253, 251, 247, 0.95);
+    /* Semi-transparent pita beige */
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid rgba(60, 42, 32, 0.1);
+}
+
+.isk-brand {
+    font-family: var(--isk-font-heading);
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--isk-color-primary);
+    text-decoration: none;
+}
+
+.isk-nav-links {
+    display: flex;
+    gap: var(--isk-spacing-md);
+}
+
+.isk-nav-links a {
+    text-decoration: none;
+    color: var(--isk-color-text);
+    font-weight: 500;
+    position: relative;
+}
+
+.isk-nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--isk-butter-gold);
+    transition: width 0.3s;
+}
+
+.isk-nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Inputs */
+.isk-input {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    border: 3px solid #ddd;
+    border-radius: var(--isk-border-radius);
+    background: var(--isk-color-surface);
+    font-family: var(--isk-font-body);
+    font-size: 1rem;
+    color: var(--isk-color-text);
+    transition: var(--isk-transition);
+}
+
+.isk-input:focus {
+    outline: none;
+    border-color: var(--isk-color-primary);
+    box-shadow: 0 0 0 4px rgba(217, 48, 37, 0.1);
+}
+
+/* Utilities */
+.bg-primary {
+    background-color: var(--isk-color-primary);
+    color: white;
+}
+
+.bg-secondary {
+    background-color: var(--isk-color-secondary);
+    color: var(--isk-color-text);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-xl {
+    margin-top: var(--isk-spacing-xl);
+}
+
+/* Inverted Mode */
+body.inverted {
+    --isk-color-bg: #221814;
+    /* Dark charred background */
+    --isk-color-text: #FDFBF7;
+    --isk-color-border: #FDFBF7;
+    --isk-color-surface: #3C2A20;
+    --isk-shadow-base: 8px 8px 0px rgba(0, 0, 0, 0.5);
+}
+
+body.inverted h1,
+body.inverted h2,
+body.inverted .isk-brand {
+    color: #FF6B6B;
+    /* Brighter tomato for dark mode */
+}

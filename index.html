@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iskender Design System</title>
+    <link rel="stylesheet" href="iskender.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="isk-nav">
+        <a href="#" class="isk-brand">ISKENDER.</a>
+        <div class="isk-nav-links">
+            <a href="#flavor">Flavor</a>
+            <a href="#ingredients">Ingredients</a>
+            <a href="#recipe">Recipe</a>
+            <button id="theme-toggle" class="isk-btn"
+                style="padding: 0.5rem 1.5rem; font-size: 0.8rem; border-width: 2px; box-shadow: none;">Day/Night</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="isk-section" style="padding-top: 4rem; padding-bottom: 8rem;">
+        <div class="isk-container">
+            <div style="max-width: 900px;">
+                <h1>Rich. Sizzling.<br><span style="color: var(--isk-butter-gold);">Unforgettable.</span></h1>
+                <p style="font-size: 1.5rem; margin-bottom: 3rem;">
+                    A design system inspired by the legendary dish.
+                    Layered richness, golden accents, and a philosophy that bold simplicity tastes best.
+                    <br><strong>No neon. Just pure flavor.</strong>
+                </p>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                    <a href="#ingredients" class="isk-btn">Taste the Components</a>
+                    <a href="https://github.com" class="isk-btn isk-btn-gold">Get the Recipe</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Philosophy Grid -->
+    <section id="flavor" class="isk-section" style="background-color: var(--isk-color-surface);">
+        <div class="isk-container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h2>THE FLAVOR PROFILE</h2>
+                <p style="margin: 0 auto;">What makes this system delicious?</p>
+            </div>
+
+            <div class="isk-grid">
+                <div class="isk-card">
+                    <h3>The Sauce</h3>
+                    <p>Primary red (#D93025) inspired by rich tomato sauce. It drives attention and stimulates appetite
+                        for interaction.</p>
+                </div>
+                <div class="isk-card">
+                    <h3>The Butter</h3>
+                    <p>Golden accents (#FBBC05) that sizzle. Used for highlights, hover states, and moments of delight.
+                    </p>
+                </div>
+                <div class="isk-card">
+                    <h3>The Foundation</h3>
+                    <p>Built on a warm, bread-like beige (#FDFBF7) rather than sterile white. It comforts the eyes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Showcase -->
+    <section id="ingredients" class="isk-section">
+        <div class="isk-container">
+            <h2 style="margin-bottom: 3rem;">FRESH INGREDIENTS</h2>
+
+            <div class="isk-grid">
+                <!-- Input System -->
+                <div class="isk-card">
+                    <h4>Seasoned Inputs</h4>
+                    <p>Focus states that glow warmly.</p>
+                    <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem;">
+                        <input type="text" class="isk-input" placeholder="Your Name">
+                        <input type="email" class="isk-input" placeholder="email@example.com">
+                    </div>
+                </div>
+
+                <!-- Button System -->
+                <div class="isk-card">
+                    <h4>Crispy Buttons</h4>
+                    <p>Satisfying click depth.</p>
+                    <div
+                        style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start;">
+                        <button class="isk-btn">Primary Order</button>
+                        <button class="isk-btn isk-btn-gold">Side Dish</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typography Scale -->
+            <div class="isk-card mt-xl" id="recipe">
+                <div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 2rem;">
+                    <div style="flex: 1;">
+                        <h1
+                            style="font-size: 8rem; line-height: 0.8; margin-bottom: 0; color: var(--isk-color-primary);">
+                            Aa</h1>
+                    </div>
+                    <div style="flex: 2;">
+                        <h3>Typography that satisfies.</h3>
+                        <p>We use <strong>DM Serif Display</strong> for headers to evoke the tradition of the culinary
+                            arts, paired with <strong>Lexend</strong> for clean, readable modern nutrition.</p>
+                        <hr style="border: 0; border-top: 3px solid var(--isk-butter-gold); margin: 2rem 0;">
+                        <h4 style="color: var(--isk-color-text);">h1. The Main Course</h4>
+                        <h5>h2. The Appetizer</h5>
+                        <p>p. The rich description of the meal that keeps you reading until the very last bite.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer
+        style="padding: 4rem 0; text-align: center; border-top: 4px solid var(--isk-color-primary); background: var(--isk-color-surface);">
+        <h2 style="font-size: 2rem;">ISKENDER.</h2>
+        <p>&copy; 2026. Made with hunger.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
