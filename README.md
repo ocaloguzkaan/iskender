@@ -64,7 +64,7 @@ Cards feature a unique "Sauce Drip" hover effect (`::before` psuedo-element) tha
 We use **DM Serif Display** for headers to evoke tradition and **Lexend** for modern readability.
 
 ```css
-/* Already included in iskender.css via Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Lexend:wght@300;500;700&display=swap');
 ```
 
 ### Inverted Mode (Charred)
